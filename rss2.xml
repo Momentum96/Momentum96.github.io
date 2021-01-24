@@ -9,37 +9,8 @@
     <atom:link href="https://github.aivillain.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Momentum&#39;s blog</description>
-    <pubDate>Sun, 24 Jan 2021 15:52:53 GMT</pubDate>
+    <pubDate>Sun, 24 Jan 2021 15:52:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>첫 번째 포스트</title>
-      <link>https://github.aivillain.com/2021/01/25/kr/First-Post/</link>
-      <guid>https://github.aivillain.com/2021/01/25/kr/First-Post/</guid>
-      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
-      
-      <description>&lt;p&gt;테스트.&lt;/p&gt;
-&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
-&lt;div class=&quot;message-body&quot;&gt;
-&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
-&lt;a href=&quot;/2021/01/25/en/First-Post/&quot;&gt;영어&lt;/a&gt;로도 볼 수 있습니다.
-&lt;/div&gt;
-&lt;/article&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>테스트.</p><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/en/First-Post/">영어</a>로도 볼 수 있습니다.</div></article><a id="more"></a>]]></content:encoded>
-      
-      
-      <category domain="https://github.aivillain.com/categories/Introduce/">Introduce</category>
-      
-      
-      <category domain="https://github.aivillain.com/tags/%EC%86%8C%EA%B0%9C/">소개</category>
-      
-      
-      <comments>https://github.aivillain.com/2021/01/25/kr/First-Post/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>First Post</title>
@@ -67,6 +38,35 @@
       
       
       <comments>https://github.aivillain.com/2021/01/25/en/First-Post/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>첫 번째 포스트</title>
+      <link>https://github.aivillain.com/2021/01/25/kr/First-Post/</link>
+      <guid>https://github.aivillain.com/2021/01/25/kr/First-Post/</guid>
+      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;테스트.&lt;/p&gt;
+&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
+&lt;div class=&quot;message-body&quot;&gt;
+&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
+&lt;a href=&quot;/2021/01/25/en/First-Post/&quot;&gt;영어&lt;/a&gt;로도 볼 수 있습니다.
+&lt;/div&gt;
+&lt;/article&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>테스트.</p><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/en/First-Post/">영어</a>로도 볼 수 있습니다.</div></article><a id="more"></a>]]></content:encoded>
+      
+      
+      <category domain="https://github.aivillain.com/categories/Introduce/">Introduce</category>
+      
+      
+      <category domain="https://github.aivillain.com/tags/%EC%86%8C%EA%B0%9C/">소개</category>
+      
+      
+      <comments>https://github.aivillain.com/2021/01/25/kr/First-Post/#disqus_thread</comments>
       
     </item>
     
