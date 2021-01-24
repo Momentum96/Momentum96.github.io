@@ -11387,7 +11387,10 @@ figure.highlight .section {
   right: -0.75rem;
 }
 .donate[data-type="afdian"] {
-  color: #fff;
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #885fd9;
   border-color: transparent;
 }
@@ -11401,7 +11404,10 @@ figure.highlight .section {
   box-shadow: 0 0 0 0.125em rgba(136,95,217,0.25);
 }
 .donate[data-type="alipay"] {
-  color: #fff;
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #00a0e8;
   border-color: transparent;
 }
@@ -11415,7 +11421,10 @@ figure.highlight .section {
   box-shadow: 0 0 0 0.125em rgba(0,160,232,0.25);
 }
 .donate[data-type="buymeacoffee"] {
-  color: rgba(0,0,0,0.7);
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #fd0;
   border-color: transparent;
 }
@@ -11429,7 +11438,10 @@ figure.highlight .section {
   box-shadow: 0 0 0 0.125em rgba(255,221,0,0.25);
 }
 .donate[data-type="paypal"] {
-  color: rgba(0,0,0,0.7);
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #feb700;
   border-color: transparent;
 }
@@ -11443,7 +11455,10 @@ figure.highlight .section {
   box-shadow: 0 0 0 0.125em rgba(254,183,0,0.25);
 }
 .donate[data-type="patreon"] {
-  color: #fff;
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #ff424d;
   border-color: transparent;
 }
@@ -11457,7 +11472,10 @@ figure.highlight .section {
   box-shadow: 0 0 0 0.125em rgba(255,66,77,0.25);
 }
 .donate[data-type="wechat"] {
-  color: #fff;
+/* default theme */
+/* color: findColorInvert($color) */
+/* cyberpunk */
+  color: #02d7f2;
   background-color: #1aad19;
   border-color: transparent;
 }
