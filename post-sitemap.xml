@@ -9,8 +9,16 @@
 
 
     <url>
-        <loc>https://github.aivillain.com/2017/01/31/CDN-Providers-md/</loc>
-        <lastmod>2021-01-24T15:30:49.185Z</lastmod>
+        <loc>https://github.aivillain.com/2021/01/25/kr/First-Post/</loc>
+        <lastmod>2021-01-24T15:52:53.096Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/2021/01/25/en/First-Post/</loc>
+        <lastmod>2021-01-24T15:52:52.130Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
