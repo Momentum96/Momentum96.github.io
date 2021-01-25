@@ -4,9 +4,9 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>눈높이코딩</title>
-    <link>https://github.aivillain.com/</link>
+    <link>https://www.aivillain.com/</link>
     
-    <atom:link href="https://github.aivillain.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://www.aivillain.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Momentum&#39;s blog</description>
     <pubDate>Mon, 25 Jan 2021 02:21:12 GMT</pubDate>
@@ -14,8 +14,8 @@
     
     <item>
       <title>Create, Operate, Convert Pytorch Tensor</title>
-      <link>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/</link>
-      <guid>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/</guid>
+      <link>https://www.aivillain.com/2021/01/25/en/Pytorch-Tensor/</link>
+      <guid>https://www.aivillain.com/2021/01/25/en/Pytorch-Tensor/</guid>
       <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
       
         
@@ -31,22 +31,22 @@
       <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/kr/Pytorch-Tensor/">한국어</a>로도 볼 수 있습니다.</div></article><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-info-circle mr-2"></i>My English is not good. So if there is a grammatical error, please leave a comment.</div></article><h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch?"></a>Pytorch?</h3><hr><p>Python Library Helps Build Deep Learning Projects<br>Provides a tensor, a core data structure (multi-dimensional array similar to the numpy array)<br>Tensor accelerates mathematical operations (GPU available)</p><p>It is mostly made of C++ and CUDA for performance reasons.</p><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><hr><p><a href="https://pytorch.org/get-started/locally/">PyTorch Installation Link</a></p><p>Copy Run this Command after setting it to your environment.</p><h3 id="Check-GPU"><a href="#Check-GPU" class="headerlink" title="Check GPU"></a>Check GPU</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">print(torch.cuda.get_device_name(<span class="number">0</span>))</span><br><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure><h3 id="Create-Tensor"><a href="#Create-Tensor" class="headerlink" title="Create Tensor"></a>Create Tensor</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The values that existed in the memory allocated at that time appear as</span></span><br><span class="line"><span class="comment"># initial values.</span></span><br><span class="line">x = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Randomly initialized matrix (0 = x &lt; 1)</span></span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line"><span class="comment"># dtype = long, Matrix filled with zeros</span></span><br><span class="line">x = torch.zeros(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.long) </span><br><span class="line"><span class="comment"># Create tensor with list</span></span><br><span class="line">x = torch.tensor([<span class="number">5.5</span>, <span class="number">3</span>]) </span><br><span class="line"></span><br><span class="line"><span class="comment"># Create new Tensor based on existing Tensor</span></span><br><span class="line">x = x.new_ones(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.double) </span><br><span class="line"><span class="comment"># Create new Tensor based on existing Tensor</span></span><br><span class="line">x = torch.randn_like(x, dtype=torch.<span class="built_in">float</span>) </span><br><span class="line"><span class="comment"># Obtain matrix size, return torch.Size supports tuple types, all tuple operations</span></span><br><span class="line">x.size() </span><br></pre></td></tr></table></figure><h3 id="Tensor-Operation"><a href="#Tensor-Operation" class="headerlink" title="Tensor Operation"></a>Tensor Operation</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Operation 1</span></span><br><span class="line">y = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line">print(x + y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Operation 2</span></span><br><span class="line">print(torch.add(x, y)) </span><br><span class="line"></span><br><span class="line">result = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Operation 3</span></span><br><span class="line">torch.add(x, y, out=result) </span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure><h3 id="Change-Tensor-shape-and-convert-to-numpy-array"><a href="#Change-Tensor-shape-and-convert-to-numpy-array" class="headerlink" title="Change Tensor shape and convert to numpy array"></a>Change Tensor shape and convert to numpy array</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># When changing size and shape of sensor, use torch.view</span></span><br><span class="line">x = torch.rand(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">y = x.view(<span class="number">16</span>)</span><br><span class="line">z = x.view(-<span class="number">1</span>, <span class="number">8</span>)</span><br><span class="line">print(x.size(), y.size(), z.size())</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># If only one value exists in the tensor, a numeric value can be obtained</span></span><br><span class="line"><span class="comment"># using .item()</span></span><br><span class="line">print(x.item()) </span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert torch tensor to numpy array</span></span><br><span class="line">a = torch.ones(<span class="number">5</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = a.numpy()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure><h3 id="CPU-GPU-Tensor-Change"><a href="#CPU-GPU-Tensor-Change" class="headerlink" title="CPU, GPU Tensor Change"></a>CPU, GPU Tensor Change</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run only in CUDA-enabled environments (GPU environments)</span></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available(): </span><br><span class="line">    device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line">    <span class="comment"># Create a direct tensor on a GPU</span></span><br><span class="line">    y = torch.ones_like(x, device=device) </span><br><span class="line">    <span class="comment"># Change CPU Tensor to GPU Tensor</span></span><br><span class="line">    x = x.to(device) </span><br><span class="line">    z = x + y</span><br><span class="line">    print(z)</span><br><span class="line">    print(z.to(<span class="string">&quot;cpu&quot;</span>, torch.double))</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       
-      <category domain="https://github.aivillain.com/categories/Pytorch/">Pytorch</category>
+      <category domain="https://www.aivillain.com/categories/Pytorch/">Pytorch</category>
       
       
-      <category domain="https://github.aivillain.com/tags/Pytorch/">Pytorch</category>
+      <category domain="https://www.aivillain.com/tags/Pytorch/">Pytorch</category>
       
-      <category domain="https://github.aivillain.com/tags/Deep-learning/">Deep learning</category>
+      <category domain="https://www.aivillain.com/tags/Deep-learning/">Deep learning</category>
       
       
-      <comments>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/#disqus_thread</comments>
+      <comments>https://www.aivillain.com/2021/01/25/en/Pytorch-Tensor/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>Pytorch 텐서 생성, 연산, 변환</title>
-      <link>https://github.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</link>
-      <guid>https://github.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</guid>
+      <link>https://www.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</link>
+      <guid>https://www.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</guid>
       <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
       
         
@@ -61,15 +61,76 @@
       <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>This article is also available in<a href="/2021/01/25/en/Pytorch-Tensor/">English</a>.</div></article><h3 id="Pytorch란"><a href="#Pytorch란" class="headerlink" title="Pytorch란?"></a>Pytorch란?</h3><hr><p>딥러닝 프로젝트 빌드를 위해 도움을 주는 파이썬 라이브러리<br>코어 데이터 구조인 텐서를 제공 (numpy 배열과 유사한 다차원 배열)<br>텐서는 수학적 연산을 가속화 (GPU 사용 가능)</p><p>성능적인 이유로 대부분 C++과 CUDA로 만들어져있음.</p><h3 id="설치방법"><a href="#설치방법" class="headerlink" title="설치방법"></a>설치방법</h3><hr><p><a href="https://pytorch.org/get-started/locally/">PyTorch 설치 링크</a></p><p>본인의 환경에 맞게 설정 후 Run this Command 명령어 복사</p><h3 id="GPU-확인"><a href="#GPU-확인" class="headerlink" title="GPU 확인"></a>GPU 확인</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">print(torch.cuda.get_device_name(<span class="number">0</span>))</span><br><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure><h3 id="Tensor-생성"><a href="#Tensor-생성" class="headerlink" title="Tensor 생성"></a>Tensor 생성</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 그 시점에 할당된 메모리에 존재하던 값들이 초기값으로 나타남</span></span><br><span class="line">x = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 무작위로 초기화된 행렬 (0 &lt;= x &lt; 1)</span></span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line"><span class="comment"># dtype = long, 0으로 채워진 행렬</span></span><br><span class="line">x = torch.zeros(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.long) </span><br><span class="line"><span class="comment"># list를 사용하여 직접 tensor 생성</span></span><br><span class="line">x = torch.tensor([<span class="number">5.5</span>, <span class="number">3</span>]) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 기존 tensor를 바탕으로 새로운 tensor 생성</span></span><br><span class="line">x = x.new_ones(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.double) </span><br><span class="line"><span class="comment"># 기존 tensor를 바탕으로 새로운 tensor 생성</span></span><br><span class="line">x = torch.randn_like(x, dtype=torch.<span class="built_in">float</span>) </span><br><span class="line"><span class="comment"># 행렬 크기 구하기, 반환인 torch.Size는 튜플 타입, 모든 튜플 연산 지원</span></span><br><span class="line">x.size() </span><br></pre></td></tr></table></figure><h3 id="Tensor-연산"><a href="#Tensor-연산" class="headerlink" title="Tensor 연산"></a>Tensor 연산</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 연산 문법 1</span></span><br><span class="line">y = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line">print(x + y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 연산 문법 2</span></span><br><span class="line">print(torch.add(x, y)) </span><br><span class="line"></span><br><span class="line">result = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 연산 문법 3</span></span><br><span class="line">torch.add(x, y, out=result) </span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure><h3 id="Tensor-shape-변경-및-numpy-배열로-변환"><a href="#Tensor-shape-변경-및-numpy-배열로-변환" class="headerlink" title="Tensor shape 변경 및 numpy 배열로 변환"></a>Tensor shape 변경 및 numpy 배열로 변환</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tensor의 size, shape 변경 시에는 torch.view 사용</span></span><br><span class="line">x = torch.rand(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">y = x.view(<span class="number">16</span>)</span><br><span class="line">z = x.view(-<span class="number">1</span>, <span class="number">8</span>)</span><br><span class="line">print(x.size(), y.size(), z.size())</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># tensor에 하나의 값만 존재한다면 .item()을 사용하여 숫자 값 얻을 수 있음</span></span><br><span class="line">print(x.item()) </span><br><span class="line"></span><br><span class="line"><span class="comment"># torch tensor를 numpy 배열로 변환</span></span><br><span class="line">a = torch.ones(<span class="number">5</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = a.numpy()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure><h3 id="CPU-GPU-Tensor-변환"><a href="#CPU-GPU-Tensor-변환" class="headerlink" title="CPU, GPU Tensor 변환"></a>CPU, GPU Tensor 변환</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># CUDA 사용 가능 환경(GPU 환경)에서만 실행</span></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available(): </span><br><span class="line">    device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line">    <span class="comment"># GPU 상 직접 tensor 생성</span></span><br><span class="line">    y = torch.ones_like(x, device=device) </span><br><span class="line">    <span class="comment"># CPU 텐서를 GPU 텐서로 변경</span></span><br><span class="line">    x = x.to(device) </span><br><span class="line">    z = x + y</span><br><span class="line">    print(z)</span><br><span class="line">    print(z.to(<span class="string">&quot;cpu&quot;</span>, torch.double))</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       
-      <category domain="https://github.aivillain.com/categories/Pytorch/">Pytorch</category>
+      <category domain="https://www.aivillain.com/categories/Pytorch/">Pytorch</category>
       
       
-      <category domain="https://github.aivillain.com/tags/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98/">파이토치</category>
+      <category domain="https://www.aivillain.com/tags/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98/">파이토치</category>
       
-      <category domain="https://github.aivillain.com/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</category>
+      <category domain="https://www.aivillain.com/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</category>
       
       
-      <comments>https://github.aivillain.com/2021/01/25/kr/Pytorch-Tensor/#disqus_thread</comments>
+      <comments>https://www.aivillain.com/2021/01/25/kr/Pytorch-Tensor/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Pytorch Autograd</title>
+      <link>https://www.aivillain.com/2021/01/25/kr/Pytorch-Autograd/</link>
+      <guid>https://www.aivillain.com/2021/01/25/kr/Pytorch-Autograd/</guid>
+      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
+&lt;div class=&quot;message-body&quot;&gt;
+&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;This article is also</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>This article is also available in<a href="/2021/01/25/en/Pytorch-Autograd/">English</a>.</div></article><h3 id="Autogard-자동-미분"><a href="#Autogard-자동-미분" class="headerlink" title="Autogard (자동 미분)"></a>Autogard (자동 미분)</h3><hr><ul><li>autogard 패키지는 Tensor의 모든 연산에 대한 자동 미분 제공<br>  torch.Tensor 클래스에서 <strong>.requires_gard 속성을 True로 설정</strong>하면 해당 tensor에서 이뤄진 모든 연산들을 추적(track)<br>  계산이 완료된 후 <strong>.backward()**를 호출하여 **변화도(gradient)를 자동으로 계산</strong>할 수 있음</li></ul><ul><li>Tensor가 기록 추적하는 것을 중단시키려면 <strong>.detach()**를 호출하여 연산 기록으로부터 분리할 수 있음<br>  기록 추적 및 메모리 사용을 방지하기 위해 코드 블럭을 **with torch.no_gard():</strong> 로 감쌀 수 있음<br>  변화도(gradient)는 필요 없지만 <strong>requires_guard=True로 설정</strong>되어 학습 가능한 매개변수를 갖는 모델 평가 시 유용</li></ul><ul><li>Function 클래스<br>  Tensor와 Function은 서로 연결되어 있으며, 모든 연산 과정을 부호화(encode)하여 순환하지 않는 그래프를 생성<br>  각 Tensor는 <strong>.gard_fn 속성</strong>을 갖는데, 이는 Tensor를 생성한 Function을 참고함<br>  <strong>(사용자 생성 Tensor의 grad_fn은 None)</strong><br>  도함수 계산은 Tensor의 .backward() 호출<br>  Tensor가 스칼리인 경우 backward에 인자 필요 없으나 <strong>여러 요소를 가질 때는 tensor의 모양을 gradient의 인자로 지정</strong>할 필요가 있음</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://www.aivillain.com/categories/Pytorch/">Pytorch</category>
+      
+      
+      <category domain="https://www.aivillain.com/tags/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98/">파이토치</category>
+      
+      <category domain="https://www.aivillain.com/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</category>
+      
+      
+      <comments>https://www.aivillain.com/2021/01/25/kr/Pytorch-Autograd/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Pytorch Autograd</title>
+      <link>https://www.aivillain.com/2021/01/25/en/Pytorch-Autograd/</link>
+      <guid>https://www.aivillain.com/2021/01/25/en/Pytorch-Autograd/</guid>
+      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
+&lt;div class=&quot;message-body&quot;&gt;
+&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
+&lt;a href=&quot;/2021/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/kr/Pytorch-Autograd/">한국어</a>로도 볼 수 있습니다.</div></article><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-info-circle mr-2"></i>My English is not good. So if there is a grammatical error, please leave a comment.</div></article><h3 id="Autogard"><a href="#Autogard" class="headerlink" title="Autogard"></a>Autogard</h3><hr><ul><li>autogard package provides automatic differentiation for all operations of the Tensor.<br>  Setting the <strong>.requires_gard property to True</strong> in the torch.Tensor class tracks all operations performed on that sensor.<br>  After the calculation is complete, you can call <strong>.backward()</strong> to <strong>automatically calculate the gradient</strong></li></ul><ul><li>To stop Tensor from tracking records, you can call <strong>.detach()</strong> to separate from the computational history<br>  Code blocks can be wrapped <strong>with torch.no_gard():</strong> to avoid historical tracking and memory usage<br>  Useful for evaluating models with learnable parameters, set to <strong>require_guard=True</strong>, although gradients are not required.</li></ul><ul><li>Function Class<br>  Tensor and Function are interconnected and encode all computational processes to create non-circulating graphs<br>  Each Tensor has a <strong>.gard_fn</strong> property, which refers to the Function that generated the Tensor<br>  <strong>(The gradient_fn of the user-generated Tensor is None)</strong><br>  The derivative calculation calls the .backward() of the Tensor<br>  Backward does not require factors if Tensor is Scally, but when it has <strong>multiple elements, it is necessary to shape the Tensor as a factor of gradient</strong>.</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://www.aivillain.com/categories/Pytorch/">Pytorch</category>
+      
+      
+      <category domain="https://www.aivillain.com/tags/Pytorch/">Pytorch</category>
+      
+      <category domain="https://www.aivillain.com/tags/Deep-learning/">Deep learning</category>
+      
+      
+      <comments>https://www.aivillain.com/2021/01/25/en/Pytorch-Autograd/#disqus_thread</comments>
       
     </item>
     
