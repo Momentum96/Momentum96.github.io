@@ -2,14 +2,46 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://www.aivillain.com/</loc>
+        <loc>https://aivillain.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>https://www.aivillain.com/2021/01/25/en/Pytorch-Autograd/</loc>
+        <loc>https://aivillain.com/2021/01/26/en/Pytorch-Neural-Network/</loc>
+        <lastmod>2021-01-26T15:03:49.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://aivillain.com/2021/01/26/kr/Pytorch-Neural-Network/</loc>
+        <lastmod>2021-01-26T05:51:50.355Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://aivillain.com/2021/01/26/en/Pytorch-Autograd-Practice/</loc>
+        <lastmod>2021-01-26T05:12:01.984Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://aivillain.com/2021/01/26/kr/Pytorch-Autograd-Practice/</loc>
+        <lastmod>2021-01-26T05:01:38.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://aivillain.com/2021/01/25/en/Pytorch-Autograd/</loc>
         <lastmod>2021-01-25T05:13:31.852Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -17,7 +49,7 @@
     </url>
 
     <url>
-        <loc>https://www.aivillain.com/2021/01/25/kr/Pytorch-Autograd/</loc>
+        <loc>https://aivillain.com/2021/01/25/kr/Pytorch-Autograd/</loc>
         <lastmod>2021-01-25T04:42:38.299Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -25,7 +57,7 @@
     </url>
 
     <url>
-        <loc>https://www.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</loc>
+        <loc>https://aivillain.com/2021/01/25/kr/Pytorch-Tensor/</loc>
         <lastmod>2021-01-25T02:21:13.923Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -33,7 +65,7 @@
     </url>
 
     <url>
-        <loc>https://www.aivillain.com/2021/01/25/en/Pytorch-Tensor/</loc>
+        <loc>https://aivillain.com/2021/01/25/en/Pytorch-Tensor/</loc>
         <lastmod>2021-01-25T02:21:12.949Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
