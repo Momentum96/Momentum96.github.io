@@ -2,30 +2,62 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://aivillain.com/</loc>
+        <loc>https://github.aivillain.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>https://aivillain.com/2021/01/27/en/Machine-Learning/</loc>
-        <lastmod>2021-01-27T11:36:05.184Z</lastmod>
+        <loc>https://github.aivillain.com/2021/01/27/en/Scikit-Learn-2/</loc>
+        <lastmod>2021-01-27T12:55:13.615Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/27/kr/Machine-Learning/</loc>
-        <lastmod>2021-01-27T11:32:10.846Z</lastmod>
+        <loc>https://github.aivillain.com/2021/01/27/kr/Scikit-Learn-2/</loc>
+        <lastmod>2021-01-27T12:55:10.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/27/en/Understanding-CNN/</loc>
+        <loc>https://github.aivillain.com/2021/01/27/kr/Scikit-Learn-1/</loc>
+        <lastmod>2021-01-27T12:47:59.501Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/2021/01/27/en/Scikit-Learn-1/</loc>
+        <lastmod>2021-01-27T12:47:58.665Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/2021/01/27/kr/Machine-Learning/</loc>
+        <lastmod>2021-01-27T12:36:09.363Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/2021/01/27/en/Machine-Learning/</loc>
+        <lastmod>2021-01-27T12:04:42.165Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/2021/01/27/en/Understanding-CNN/</loc>
         <lastmod>2021-01-27T11:30:57.425Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -33,7 +65,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/27/kr/Understanding-CNN/</loc>
+        <loc>https://github.aivillain.com/2021/01/27/kr/Understanding-CNN/</loc>
         <lastmod>2021-01-27T10:01:34.097Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -41,7 +73,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/26/en/Pytorch-Neural-Network/</loc>
+        <loc>https://github.aivillain.com/2021/01/26/en/Pytorch-Neural-Network/</loc>
         <lastmod>2021-01-27T09:59:47.061Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -49,7 +81,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/26/kr/Pytorch-Neural-Network/</loc>
+        <loc>https://github.aivillain.com/2021/01/26/kr/Pytorch-Neural-Network/</loc>
         <lastmod>2021-01-26T05:51:50.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -57,7 +89,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/26/en/Pytorch-Autograd-Practice/</loc>
+        <loc>https://github.aivillain.com/2021/01/26/en/Pytorch-Autograd-Practice/</loc>
         <lastmod>2021-01-26T05:12:01.984Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -65,7 +97,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/26/kr/Pytorch-Autograd-Practice/</loc>
+        <loc>https://github.aivillain.com/2021/01/26/kr/Pytorch-Autograd-Practice/</loc>
         <lastmod>2021-01-26T05:01:38.491Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -73,7 +105,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/25/en/Pytorch-Autograd/</loc>
+        <loc>https://github.aivillain.com/2021/01/25/en/Pytorch-Autograd/</loc>
         <lastmod>2021-01-25T05:13:31.852Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -81,7 +113,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/25/kr/Pytorch-Autograd/</loc>
+        <loc>https://github.aivillain.com/2021/01/25/kr/Pytorch-Autograd/</loc>
         <lastmod>2021-01-25T04:42:38.299Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -89,7 +121,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/25/kr/Pytorch-Tensor/</loc>
+        <loc>https://github.aivillain.com/2021/01/25/kr/Pytorch-Tensor/</loc>
         <lastmod>2021-01-25T02:21:13.923Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -97,7 +129,7 @@
     </url>
 
     <url>
-        <loc>https://aivillain.com/2021/01/25/en/Pytorch-Tensor/</loc>
+        <loc>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/</loc>
         <lastmod>2021-01-25T02:21:12.949Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
