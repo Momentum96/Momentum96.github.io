@@ -3,29 +3,29 @@
 
 
     <url>
-        <loc>https://github.aivillain.com/tags/Scikit-learn/</loc>
-        <lastmod>2021-01-27T12:55:13.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://github.aivillain.com/tags/Machine-Learning/</loc>
-        <lastmod>2021-01-27T12:55:13.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.aivillain.com/tags/%EC%82%AC%EC%9D%B4%ED%82%B7-%EB%9F%B0/</loc>
-        <lastmod>2021-01-27T12:55:10.792Z</lastmod>
+        <lastmod>2021-02-02T13:26:55.151Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://github.aivillain.com/tags/%EB%A8%B8%EC%8B%A0-%EB%9F%AC%EB%8B%9D/</loc>
-        <lastmod>2021-01-27T12:55:10.792Z</lastmod>
+        <lastmod>2021-02-02T13:26:55.151Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/tags/Scikit-learn/</loc>
+        <lastmod>2021-02-02T13:26:33.871Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.aivillain.com/tags/Machine-Learning/</loc>
+        <lastmod>2021-02-02T13:26:33.871Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
