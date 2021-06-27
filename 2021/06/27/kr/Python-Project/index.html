@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="kr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>파이썬 - 프로젝트 - 눈높이코딩</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="눈높이코딩"><meta name="msapplication-TileImage" content="/img/logo_CZv_icon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="눈높이코딩"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="This article is also available in English.    프로젝트 시작하기  내용   모듈 구조화, 프로그램 버전 부여, 자동으로 오류를 확인하는 코딩 방법 프로젝트 잘 설계하기   프로젝트 설계 시 지켜야 할 사항과 하지 말아야 할 사항 지켜야 할 사항   패키지와 계층구조를 적절히 사용하여 가능한 단순하게 만든다  너무 많은"><meta property="og:type" content="blog"><meta property="og:title" content="파이썬 - 프로젝트"><meta property="og:url" content="https://github.aivillain.com/2021/06/27/kr/Python-Project/"><meta property="og:site_name" content="눈높이코딩"><meta property="og:description" content="This article is also available in English.    프로젝트 시작하기  내용   모듈 구조화, 프로그램 버전 부여, 자동으로 오류를 확인하는 코딩 방법 프로젝트 잘 설계하기   프로젝트 설계 시 지켜야 할 사항과 하지 말아야 할 사항 지켜야 할 사항   패키지와 계층구조를 적절히 사용하여 가능한 단순하게 만든다  너무 많은"><meta property="og:locale" content="kr"><meta property="og:image" content="https://github.aivillain.com/img/og_image.png"><meta property="article:published_time" content="2021-06-26T15:00:00.000Z"><meta property="article:modified_time" content="2021-06-27T11:57:13.342Z"><meta property="article:author" content="Geon Woo Jeon"><meta property="article:tag" content="python"><meta property="article:tag" content="algorithm"><meta property="article:tag" content="programming"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://github.aivillain.com/2021/06/27/kr/Python-Project/"},"headline":"눈높이코딩","image":["https://github.aivillain.com/img/og_image.png"],"datePublished":"2021-06-26T15:00:00.000Z","dateModified":"2021-06-27T11:57:13.342Z","author":{"@type":"Person","name":"Geon Woo Jeon"},"description":"This article is also available in English.    프로젝트 시작하기  내용   모듈 구조화, 프로그램 버전 부여, 자동으로 오류를 확인하는 코딩 방법 프로젝트 잘 설계하기   프로젝트 설계 시 지켜야 할 사항과 하지 말아야 할 사항 지켜야 할 사항   패키지와 계층구조를 적절히 사용하여 가능한 단순하게 만든다  너무 많은"}</script><link rel="canonical" href="https://github.aivillain.com/2021/06/27/kr/Python-Project/"><link rel="icon" href="/img/logo_CZv_icon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/xt256.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&amp;family=Roboto+Mono"><link rel="stylesheet" href="/css/cyberpunk.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-J5HJKMRZ4Q" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-J5HJKMRZ4Q');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/rss2.xml" title="눈높이코딩" type="application/rss+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="눈높이코딩" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time datetime="2021-06-26T15:00:00.000Z" title="2021. 6. 27. 오전 12:00:00">2021-06-27</time>&nbsp;게시 됨</span><span class="level-item"><time datetime="2021-06-27T11:57:13.342Z" title="2021. 6. 27. 오후 8:57:13">2021-06-27</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/Python/">Python</a></span><span class="level-item">8 minutes안에 읽기 (약 1272 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">파이썬 - 프로젝트</h1><div class="content"><article class="message message-immersive is-primary">
+<div class="message-body">
+<i class="fas fa-globe-asia mr-2"></i>This article is also available in
+<a href="/2021/06/27/en/Python-Project/">English</a>.
+</div>
+</article>
+
+<h1 id="프로젝트-시작하기"><a href="#프로젝트-시작하기" class="headerlink" title="프로젝트 시작하기"></a>프로젝트 시작하기</h1><hr>
+<ul>
+<li><p>내용</p>
+<p>  모듈 구조화, 프로그램 버전 부여, 자동으로 오류를 확인하는 코딩 방법</p>
+<h2 id="프로젝트-잘-설계하기"><a href="#프로젝트-잘-설계하기" class="headerlink" title="프로젝트 잘 설계하기"></a>프로젝트 잘 설계하기</h2><hr>
+<p>  프로젝트 설계 시 지켜야 할 사항과 하지 말아야 할 사항</p>
+<h3 id="지켜야-할-사항"><a href="#지켜야-할-사항" class="headerlink" title="지켜야 할 사항"></a>지켜야 할 사항</h3><hr>
+<p>  패키지와 계층구조를 적절히 사용하여 가능한 단순하게 만든다<br>  너무 많은 계층구조 사용 시 소스 코드 찾기가 힘들고 너무 단순한 구조를 사용하면 프로젝트 구분이 힘들고 구조가 비대해짐<br>  단위 테스트를 패키지 디렉터리가 아닌 곳에 저장하지 않도록 주의<br>  단위 테스트는 개발하고 있는 프로그램의 하위 패키지에 포함해야 함</p>
+<p>  파이썬 설치 스크립트의 표준 이름은 setup.py<br>  이 파일은 설치 스크립트 구성 세부 정보가 포함된 setup.cfg와 함께 제공됨<br>  setup.py 실행 시 파이썬 배포 유틸리티를 사용해 패키지를 설치<br>  docs에는 reStructedText 형식으로 작성한 패키지 문서 저장</p>
+<h3 id="금지-사항"><a href="#금지-사항" class="headerlink" title="금지 사항"></a>금지 사항</h3><hr>
+<p>  저장할 소스 코드의 기능을 기반으로 파일이나 모듈 생성하는 것은 좋지 않음<br>  이유없이 파일을 오가게 하는 것은 도움이 되지 않음</p>
+<p>  <strong>init</strong>.py 파일만 있는 모듈 디렉터리를 만드는 것은 불필요한 일<br>  ex) hooks/<strong>init</strong>.py 파일만 있다면, 디렉터리 없이 hooks.py만으로 충분<br>  디렉터리 생성 시에는 디렉터리가 의미하는 여러 파일을 함께 저장하는 것이 좋음</p>
+<p>  <strong>init</strong>.py 파일에 입력할 소스는 매우 주의해야 함<br>  디렉터리에 포함된 모듈을 불러올 때 가장 먼저 이 파일을 호출하고 실행<br>  잘못된 내용이 있으면 의도하지 않은 오류가 생길 수 없음</p>
+<h2 id="버전-번호-매기기"><a href="#버전-번호-매기기" class="headerlink" title="버전 번호 매기기"></a>버전 번호 매기기</h2><hr>
+<p>  최신 버전임을 알 수 있도록 소프트웨어 버전을 표기해야 함<br>  사용자는 프로젝트가 개발되는 과정을 시간 순서대로 알아야 함<br>  버전 번호 구성 방법은 제한이 없으나 PEP 440은 다른 프로그램과 패키지가 패키지의 버전을 쉽고 안정적으로 구별하도록 모든 파이썬 패키지, 애플리케이션이 따라야 하는 버전 형식을 명시<br>  PEP 440은 버전 번호 매기기에 대한 정규표현식 정의</p>
+<blockquote>
+<p>N[.N]+[{a|b|c|rc}N][.postN][.devN]</p>
+</blockquote>
+<p>  1.2, 1.2.3과 같은 표준 번호 지정 가능</p>
+<ul>
+<li><p>1.2는 1.2.0과 같고 1.2.3은 1.2.3.0과 같음</p>
+</li>
+<li><p>a(1.2a1)는 알파 버전, 불안정하고 누락된 기능이 있을 수 있는 버전</p>
+</li>
+<li><p>b(2.3.1b2)는 기능이 완료되었으나 여전히 버그가 있는 베타 버전</p>
+</li>
+<li><p>c 또는 rc(0.4rc1) 는 릴리스 후보. 심각한 버그가 발생하지 않는 한 최종 제품으로 출시될 수 있는 버전<br>rc와 c는 동일 의미지만 둘 다 사용된 경우 rc 릴리스는 c 릴리스보다 새로운 것으로 간주</p>
+</li>
+<li><p>post는 출시 이후 릴리스, 사소한 오류 해결에 사용, 버그 수정 버전 출시 시에는 .postN을 쓰는 것이 아닌 마이너 버전의 번호를 늘림</p>
+</li>
+<li><p>dev는 권장하지 않음</p>
+<h2 id="코딩-스타일과-자동-검사"><a href="#코딩-스타일과-자동-검사" class="headerlink" title="코딩 스타일과 자동 검사"></a>코딩 스타일과 자동 검사</h2></li>
+</ul>
+<hr>
+<p>  표준 스타일과 자동 검사 도구 소개</p>
+<p>  PEP 8이라는 파이썬 스타일 카이드 존재<br>  파이썬 코드 작성을 위한 표준 스타일 정의</p>
+<ul>
+<li><p>들여쓰기는 4개의 공백</p>
+</li>
+<li><p>모든 행은 최대 79자</p>
+</li>
+<li><p>최상위 함수나 클래스 정의는 두개의 빈 줄로 분리</p>
+</li>
+<li><p>ASCII, UTF-8을 사용하여 파일 인코딩</p>
+</li>
+<li><p>import 문은 한 라인에 하나만, 한 import 문에서는 하나의 모듈만 가져옴<br>문서 맨 위에 쓰되 주석과 독스트링 다음에 씀<br>표준 라이브러리 임포트, 제3자 임포트, 로컬 라이브러리 임포트 순으로 그룹화</p>
+</li>
+<li><p>괄호, 대괄호, 중괄호 사이 또는 쉼표 앞에 불필요한 공백 사용하지 않음</p>
+</li>
+<li><p>클래스 이름을 낙타 표기법, 접미사 예외 오류, 소문자의 함수 이름과 언더바로 작성<br>_private 속성 또는 메서드에는 선행 언더바 사용</p>
+<p>pycodestyle이라는 pip package 존재</p>
+<blockquote>
+<p>pycodestyle 파일명.py</p>
+</blockquote>
+<blockquote>
+<p>echo %ERRORLEVEL%</p>
+</blockquote>
+<h3 id="코딩-오류를-잡는-도구"><a href="#코딩-오류를-잡는-도구" class="headerlink" title="코딩 오류를 잡는 도구"></a>코딩 오류를 잡는 도구</h3></li>
+</ul>
+<hr>
+<ul>
+<li><p>Pyflakes<br>pip로 설치 가능</p>
+</li>
+<li><p>Pylint<br>코드 오류 검사를 하는 동안 PEP 8 적합성 확인</p>
+<p>pyflakes만으로는 PEP 8 적합성 확인 불가<br>코드 오류 검사와 PEP 8 적합성을 모두 처리하려면 pylint까지 써야함</p>
+<p>pylint보다 pyflakes가 좀 더 빠르기 때문에 pyflakes와 pycodestyle을 한번에 실행할 수 있게 만든 flake8 프로젝트가 있음</p>
+<p>대부분의 오픈소스 프로젝트에서 flake8은 코드 스타일 검증에 많이 사용함</p>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>파이썬 - 프로젝트</p><p><a href="https://github.aivillain.com/2021/06/27/kr/Python-Project/">https://github.aivillain.com/2021/06/27/kr/Python-Project/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Geon Woo Jeon</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-06-27</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-06-27</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="external nofollow noopener noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/python/">python</a><a class="link-muted mr-2" rel="tag" href="/tags/algorithm/">algorithm</a><a class="link-muted mr-2" rel="tag" href="/tags/programming/">programming</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=600d6e305705640011df1903&amp;product=inline-share-buttons" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">이 글이 마음에 드시나요? 다음을 통해 후원하실 수 있습니다: </h3><div class="buttons is-centered"><a class="button donate" href="https://www.buymeacoffee.com/aivillain" target="_blank" rel="external nofollow noopener noreferrer" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>커피 한 잔 사주기</span></a><a class="button donate" data-type="paypal" onclick="document.getElementById(&#039;paypal-donate-form&#039;).submit()"><span class="icon is-small"><i class="fab fa-paypal"></i></span><span>Paypal</span></a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener" id="paypal-donate-form"><input type="hidden" name="cmd" value="_donations"><input type="hidden" name="business" value="wjsrjsdn12@gmail.com"><input type="hidden" name="currency_code" value="USD"></form></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/06/27/en/Python-Project/"><span class="level-item">Python - Project</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://github.aivillain.com/2021/06/27/kr/Python-Project/';
+            this.page.identifier = '2021/06/27/kr/Python-Project/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'my-hexo-blog-4' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Geon Woo Jeon"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Geon Woo Jeon</p><p class="is-size-6 is-block">Momentum&#039;s blog</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Cheonan, Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Momentum96" target="_blank" rel="external nofollow noopener noreferrer">팔로우</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/Momentum96"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">카탈로그</h3><ul class="menu-list"><li><a class="level is-mobile" href="#프로젝트-시작하기"><span class="level-left"><span class="level-item">1</span><span class="level-item">프로젝트 시작하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#프로젝트-잘-설계하기"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">프로젝트 잘 설계하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#지켜야-할-사항"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">지켜야 할 사항</span></span></a></li><li><a class="level is-mobile" href="#금지-사항"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">금지 사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#버전-번호-매기기"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">버전 번호 매기기</span></span></a></li><li><a class="level is-mobile" href="#코딩-스타일과-자동-검사"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">코딩 스타일과 자동 검사</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#코딩-오류를-잡는-도구"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">코딩 오류를 잡는 도구</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Machine-Learning/"><span class="level-start"><span class="level-item">Machine Learning</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Pytorch/"><span class="level-start"><span class="level-item">Pytorch</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Classification/"><span class="tag">Classification</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Convolutional-Neural-Network/"><span class="tag">Convolutional Neural Network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Deep-learning/"><span class="tag">Deep learning</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Kaggle/"><span class="tag">Kaggle</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Machine-Learning/"><span class="tag">Machine Learning</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Pytorch/"><span class="tag">Pytorch</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Scikit-learn/"><span class="tag">Scikit learn</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/programming/"><span class="tag">programming</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/scikit-learn/"><span class="tag">scikit-learn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="tag">딥러닝</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EB%A8%B8%EC%8B%A0-%EB%9F%AC%EB%8B%9D/"><span class="tag">머신 러닝</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EB%B6%84%EB%A5%98/"><span class="tag">분류</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7-%EB%9F%B0/"><span class="tag">사이킷 런</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%BA%90%EA%B8%80/"><span class="tag">캐글</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98/"><span class="tag">파이토치</span><span class="tag">4</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="눈높이코딩" height="28"></a><p class="is-size-7"><span>&copy; 2021 Geon Woo Jeon</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("kr");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="맨 위로" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "이 웹 사이트는 귀하의 경험을 향상시키기 위해 Cookie를 사용합니다.",
+          dismiss: "무시",
+          allow: "허용",
+          deny: "거부",
+          link: "더 알아보기",
+          policy: "Cookie 정책",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="external nofollow noopener noreferrer" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script data-ad-client="ca-pub-3469640916038804" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="입력 하세요..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"입력 하세요...","untitled":"(제목 없음)","posts":"포스트","pages":"페이지","categories":"카테고리","tags":"태그"});
+        });</script></body></html>

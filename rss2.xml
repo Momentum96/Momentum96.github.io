@@ -9,8 +9,73 @@
     <atom:link href="https://github.aivillain.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Momentum&#39;s blog</description>
-    <pubDate>Wed, 10 Feb 2021 14:23:46 GMT</pubDate>
+    <pubDate>Sun, 27 Jun 2021 11:57:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>파이썬 - 프로젝트</title>
+      <link>https://github.aivillain.com/2021/06/27/kr/Python-Project/</link>
+      <guid>https://github.aivillain.com/2021/06/27/kr/Python-Project/</guid>
+      <pubDate>Sat, 26 Jun 2021 15:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
+&lt;div class=&quot;message-body&quot;&gt;
+&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;This article is also</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>This article is also available in<a href="/2021/06/27/en/Python-Project/">English</a>.</div></article><h1 id="프로젝트-시작하기"><a href="#프로젝트-시작하기" class="headerlink" title="프로젝트 시작하기"></a>프로젝트 시작하기</h1><hr><ul><li><p>내용</p><p>  모듈 구조화, 프로그램 버전 부여, 자동으로 오류를 확인하는 코딩 방법</p><h2 id="프로젝트-잘-설계하기"><a href="#프로젝트-잘-설계하기" class="headerlink" title="프로젝트 잘 설계하기"></a>프로젝트 잘 설계하기</h2><hr><p>  프로젝트 설계 시 지켜야 할 사항과 하지 말아야 할 사항</p><h3 id="지켜야-할-사항"><a href="#지켜야-할-사항" class="headerlink" title="지켜야 할 사항"></a>지켜야 할 사항</h3><hr><p>  패키지와 계층구조를 적절히 사용하여 가능한 단순하게 만든다<br>  너무 많은 계층구조 사용 시 소스 코드 찾기가 힘들고 너무 단순한 구조를 사용하면 프로젝트 구분이 힘들고 구조가 비대해짐<br>  단위 테스트를 패키지 디렉터리가 아닌 곳에 저장하지 않도록 주의<br>  단위 테스트는 개발하고 있는 프로그램의 하위 패키지에 포함해야 함</p><p>  파이썬 설치 스크립트의 표준 이름은 setup.py<br>  이 파일은 설치 스크립트 구성 세부 정보가 포함된 setup.cfg와 함께 제공됨<br>  setup.py 실행 시 파이썬 배포 유틸리티를 사용해 패키지를 설치<br>  docs에는 reStructedText 형식으로 작성한 패키지 문서 저장</p><h3 id="금지-사항"><a href="#금지-사항" class="headerlink" title="금지 사항"></a>금지 사항</h3><hr><p>  저장할 소스 코드의 기능을 기반으로 파일이나 모듈 생성하는 것은 좋지 않음<br>  이유없이 파일을 오가게 하는 것은 도움이 되지 않음</p><p>  <strong>init</strong>.py 파일만 있는 모듈 디렉터리를 만드는 것은 불필요한 일<br>  ex) hooks/<strong>init</strong>.py 파일만 있다면, 디렉터리 없이 hooks.py만으로 충분<br>  디렉터리 생성 시에는 디렉터리가 의미하는 여러 파일을 함께 저장하는 것이 좋음</p><p>  <strong>init</strong>.py 파일에 입력할 소스는 매우 주의해야 함<br>  디렉터리에 포함된 모듈을 불러올 때 가장 먼저 이 파일을 호출하고 실행<br>  잘못된 내용이 있으면 의도하지 않은 오류가 생길 수 없음</p><h2 id="버전-번호-매기기"><a href="#버전-번호-매기기" class="headerlink" title="버전 번호 매기기"></a>버전 번호 매기기</h2><hr><p>  최신 버전임을 알 수 있도록 소프트웨어 버전을 표기해야 함<br>  사용자는 프로젝트가 개발되는 과정을 시간 순서대로 알아야 함<br>  버전 번호 구성 방법은 제한이 없으나 PEP 440은 다른 프로그램과 패키지가 패키지의 버전을 쉽고 안정적으로 구별하도록 모든 파이썬 패키지, 애플리케이션이 따라야 하는 버전 형식을 명시<br>  PEP 440은 버전 번호 매기기에 대한 정규표현식 정의</p><blockquote><p>N[.N]+[{a|b|c|rc}N][.postN][.devN]</p></blockquote><p>  1.2, 1.2.3과 같은 표준 번호 지정 가능</p><ul><li><p>1.2는 1.2.0과 같고 1.2.3은 1.2.3.0과 같음</p></li><li><p>a(1.2a1)는 알파 버전, 불안정하고 누락된 기능이 있을 수 있는 버전</p></li><li><p>b(2.3.1b2)는 기능이 완료되었으나 여전히 버그가 있는 베타 버전</p></li><li><p>c 또는 rc(0.4rc1) 는 릴리스 후보. 심각한 버그가 발생하지 않는 한 최종 제품으로 출시될 수 있는 버전<br>rc와 c는 동일 의미지만 둘 다 사용된 경우 rc 릴리스는 c 릴리스보다 새로운 것으로 간주</p></li><li><p>post는 출시 이후 릴리스, 사소한 오류 해결에 사용, 버그 수정 버전 출시 시에는 .postN을 쓰는 것이 아닌 마이너 버전의 번호를 늘림</p></li><li><p>dev는 권장하지 않음</p><h2 id="코딩-스타일과-자동-검사"><a href="#코딩-스타일과-자동-검사" class="headerlink" title="코딩 스타일과 자동 검사"></a>코딩 스타일과 자동 검사</h2></li></ul><hr><p>  표준 스타일과 자동 검사 도구 소개</p><p>  PEP 8이라는 파이썬 스타일 카이드 존재<br>  파이썬 코드 작성을 위한 표준 스타일 정의</p><ul><li><p>들여쓰기는 4개의 공백</p></li><li><p>모든 행은 최대 79자</p></li><li><p>최상위 함수나 클래스 정의는 두개의 빈 줄로 분리</p></li><li><p>ASCII, UTF-8을 사용하여 파일 인코딩</p></li><li><p>import 문은 한 라인에 하나만, 한 import 문에서는 하나의 모듈만 가져옴<br>문서 맨 위에 쓰되 주석과 독스트링 다음에 씀<br>표준 라이브러리 임포트, 제3자 임포트, 로컬 라이브러리 임포트 순으로 그룹화</p></li><li><p>괄호, 대괄호, 중괄호 사이 또는 쉼표 앞에 불필요한 공백 사용하지 않음</p></li><li><p>클래스 이름을 낙타 표기법, 접미사 예외 오류, 소문자의 함수 이름과 언더바로 작성<br>_private 속성 또는 메서드에는 선행 언더바 사용</p><p>pycodestyle이라는 pip package 존재</p><blockquote><p>pycodestyle 파일명.py</p></blockquote><blockquote><p>echo %ERRORLEVEL%</p></blockquote><h3 id="코딩-오류를-잡는-도구"><a href="#코딩-오류를-잡는-도구" class="headerlink" title="코딩 오류를 잡는 도구"></a>코딩 오류를 잡는 도구</h3></li></ul><hr><ul><li><p>Pyflakes<br>pip로 설치 가능</p></li><li><p>Pylint<br>코드 오류 검사를 하는 동안 PEP 8 적합성 확인</p><p>pyflakes만으로는 PEP 8 적합성 확인 불가<br>코드 오류 검사와 PEP 8 적합성을 모두 처리하려면 pylint까지 써야함</p><p>pylint보다 pyflakes가 좀 더 빠르기 때문에 pyflakes와 pycodestyle을 한번에 실행할 수 있게 만든 flake8 프로젝트가 있음</p><p>대부분의 오픈소스 프로젝트에서 flake8은 코드 스타일 검증에 많이 사용함</p></li></ul></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://github.aivillain.com/categories/Python/">Python</category>
+      
+      
+      <category domain="https://github.aivillain.com/tags/python/">python</category>
+      
+      <category domain="https://github.aivillain.com/tags/algorithm/">algorithm</category>
+      
+      <category domain="https://github.aivillain.com/tags/programming/">programming</category>
+      
+      
+      <comments>https://github.aivillain.com/2021/06/27/kr/Python-Project/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Python - Project</title>
+      <link>https://github.aivillain.com/2021/06/27/en/Python-Project/</link>
+      <guid>https://github.aivillain.com/2021/06/27/en/Python-Project/</guid>
+      <pubDate>Sat, 26 Jun 2021 15:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
+&lt;div class=&quot;message-body&quot;&gt;
+&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
+&lt;a href=&quot;/2021/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/06/27/kr/Python-Project/">한국어</a>로도 볼 수 있습니다.</div></article><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-info-circle mr-2"></i>My English is not good. So if there is a grammatical error, please leave a comment.</div></article><h1 id="Getting-Started-with-a-Project"><a href="#Getting-Started-with-a-Project" class="headerlink" title="Getting Started with a Project"></a>Getting Started with a Project</h1><hr><ul><li><p>content</p><p>  How to structure modules, version programs, and automatically check for errors</p><h2 id="Design-projects-well"><a href="#Design-projects-well" class="headerlink" title="Design projects well"></a>Design projects well</h2><hr><p>  Matters to be observed and not to be done when designing a project</p><h3 id="What-to-keep"><a href="#What-to-keep" class="headerlink" title="What to keep"></a>What to keep</h3><hr><p>  Make packages and hierarchies as simple as possible using them appropriately.<br>  Using too many hierarchies makes source code difficult to find, using too simple structures makes project distinctions difficult, and structures become too large<br>  Avoid storing unit tests outside the package directory<br>  Unit tests must be included in the sub-package of the program being developed</p><p>  The standard name for the Python installation script is setup.py<br>  This file is shipped with setup.cfg with installation script configuration details<br>  Install the package using the Python deployment utility when running setup.py<br>  documents stored in packages created in reStructuredText format in docs</p><h3 id="Prohibited"><a href="#Prohibited" class="headerlink" title="Prohibited"></a>Prohibited</h3><hr><p>  Creating a file or module based on the functionality of the source code you want to save is not a good idea.<br>  Moving files back and forth for no reason does not help.</p><p>  Creating a module directory with only <strong>init</strong>.py files is unnecessary<br>  ex) As long as you have a hooks/<strong>init</strong>.py file, hooks.py is enough without a directory.<br>  When creating a directory, it is recommended that you save multiple files together that the directory means.</p><p>  The source you enter in the <strong>init</strong>.py file should be very careful<br>  Invoke and run this file first when recalling modules contained in the directory<br>  Unintentional errors cannot occur if there is incorrect content</p><h2 id="Version-Numbering"><a href="#Version-Numbering" class="headerlink" title="Version Numbering"></a>Version Numbering</h2><hr><p>  Software version must be marked so that it is up to date<br>  Users need to know how projects are developed in chronological order<br>  Although there is no limit to how the version number is configured, PEP 440 specifies the version format that all Python packages, applications must follow to ensure that other programs and packages easily and reliably distinguish the version of the package.<br>  PEP 440 defines regular expressions for version numbering</p><blockquote><p>N[.N]+[{a|b|c|rc}N][.postN][.devN]</p></blockquote><p>  Standard numbering is available such as 1.2 and 1.2.3</p><ul><li><p>1.2 equals 1.2.0 and 1.2.3 equals 1.2.3.0</p></li><li><p>a (1.2a1) is an alpha version, which may be unstable and have missing features.</p></li><li><p>b (2.3.1b2) is a beta version that is complete but still bugged.</p></li><li><p>c or rc (0.4rc1) is a release candidate, a version that can be released as a final product unless a serious bug occurs.<br>If both rc and c are used, the rc release is considered newer than the c release.</p></li><li><p>post is used for post-release releases, for minor failover, increasing the number of minor versions rather than .postN when bug fixes are released</p></li><li><p>dev is not recommended</p><h2 id="Coding-Style-and-Auto-Check"><a href="#Coding-Style-and-Auto-Check" class="headerlink" title="Coding Style and Auto-Check"></a>Coding Style and Auto-Check</h2></li></ul><hr><p>  Introduction to standard styles and automated inspection tools</p><p>  The presence of Python-style cider named PEP 8.<br>  Define a standard style for creating Python code</p><ul><li><p>Indent is 4 spaces</p></li><li><p>79 characters maximum for all rows</p></li><li><p>Top-level functions or class definitions are separated by two blank lines</p></li><li><p>ASCII, encoding files using UTF-8</p></li><li><p>import statement imports only one module on one line, and only one module on one import statement<br>Write at the top of the document, followed by comments and dogstrings<br>Group by standard library imports, third-party imports, and local library imports</p></li><li><p>Do not use unnecessary spaces before brackets, brackets, brackets, or commas</p></li><li><p>Create a class name with camel notation, suffix exception error, lowercase function name and underbar<br>Use leading underbar for _private properties or methods</p><p>The existence of a pip package called a pycodestyle</p><blockquote><p>pycodestyle filename.py</p></blockquote><blockquote><p>echo %ERRORLEVEL%</p></blockquote><h3 id="Tool-to-catch-coding-errors"><a href="#Tool-to-catch-coding-errors" class="headerlink" title="Tool to catch coding errors"></a>Tool to catch coding errors</h3></li></ul><hr><ul><li><p>Pyflakes<br>Can be installed with a pip</p></li><li><p>Pylint<br>Check PEP 8 compliance during code error check</p><p>PEP 8 compliance cannot be confirmed by pyflakes alone<br>Need to write up to pylint to handle both code error checking and PEP 8 conformity</p><p>Because pyflakes are faster than pylint, there is a flake8 project that allows pyflakes and pycodestyle to run at once.</p><p>In most open source projects, flake8 is often used for code style validation.</p></li></ul></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://github.aivillain.com/categories/Python/">Python</category>
+      
+      
+      <category domain="https://github.aivillain.com/tags/python/">python</category>
+      
+      <category domain="https://github.aivillain.com/tags/algorithm/">algorithm</category>
+      
+      <category domain="https://github.aivillain.com/tags/programming/">programming</category>
+      
+      
+      <comments>https://github.aivillain.com/2021/06/27/en/Python-Project/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Kaggle Titanic Solve</title>
@@ -562,68 +627,6 @@
       
       
       <comments>https://github.aivillain.com/2021/01/26/kr/Pytorch-Neural-Network/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Pytorch Autograd</title>
-      <link>https://github.aivillain.com/2021/01/25/en/Pytorch-Autograd/</link>
-      <guid>https://github.aivillain.com/2021/01/25/en/Pytorch-Autograd/</guid>
-      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
-&lt;div class=&quot;message-body&quot;&gt;
-&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
-&lt;a href=&quot;/2021/</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/kr/Pytorch-Autograd/">한국어</a>로도 볼 수 있습니다.</div></article><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-info-circle mr-2"></i>My English is not good. So if there is a grammatical error, please leave a comment.</div></article><h3 id="Autogard"><a href="#Autogard" class="headerlink" title="Autogard"></a>Autogard</h3><hr><ul><li>autogard package provides automatic differentiation for all operations of the Tensor.<br>  Setting the <strong>.requires_gard property to True</strong> in the torch.Tensor class tracks all operations performed on that sensor.<br>  After the calculation is complete, you can call <strong>.backward()</strong> to <strong>automatically calculate the gradient</strong></li></ul><ul><li>To stop Tensor from tracking records, you can call <strong>.detach()</strong> to separate from the computational history<br>  Code blocks can be wrapped <strong>with torch.no_gard():</strong> to avoid historical tracking and memory usage<br>  Useful for evaluating models with learnable parameters, set to <strong>require_guard=True</strong>, although gradients are not required.</li></ul><ul><li>Function Class<br>  Tensor and Function are interconnected and encode all computational processes to create non-circulating graphs<br>  Each Tensor has a <strong>.gard_fn</strong> property, which refers to the Function that generated the Tensor<br>  <strong>(The gradient_fn of the user-generated Tensor is None)</strong><br>  The derivative calculation calls the .backward() of the Tensor<br>  Backward does not require factors if Tensor is Scally, but when it has <strong>multiple elements, it is necessary to shape the Tensor as a factor of gradient</strong>.</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://github.aivillain.com/categories/Pytorch/">Pytorch</category>
-      
-      
-      <category domain="https://github.aivillain.com/tags/Pytorch/">Pytorch</category>
-      
-      <category domain="https://github.aivillain.com/tags/Deep-learning/">Deep learning</category>
-      
-      
-      <comments>https://github.aivillain.com/2021/01/25/en/Pytorch-Autograd/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Create, Operate, Convert Pytorch Tensor</title>
-      <link>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/</link>
-      <guid>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/</guid>
-      <pubDate>Sun, 24 Jan 2021 15:00:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;article class=&quot;message message-immersive is-primary&quot;&gt;
-&lt;div class=&quot;message-body&quot;&gt;
-&lt;i class=&quot;fas fa-globe-asia mr-2&quot;&gt;&lt;/i&gt;이 글은
-&lt;a href=&quot;/2021/</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-globe-asia mr-2"></i>이 글은<a href="/2021/01/25/kr/Pytorch-Tensor/">한국어</a>로도 볼 수 있습니다.</div></article><article class="message message-immersive is-primary"><div class="message-body"><i class="fas fa-info-circle mr-2"></i>My English is not good. So if there is a grammatical error, please leave a comment.</div></article><h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch?"></a>Pytorch?</h3><hr><p>Python Library Helps Build Deep Learning Projects<br>Provides a tensor, a core data structure (multi-dimensional array similar to the numpy array)<br>Tensor accelerates mathematical operations (GPU available)</p><p>It is mostly made of C++ and CUDA for performance reasons.</p><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><hr><p><a href="https://pytorch.org/get-started/locally/">PyTorch Installation Link</a></p><p>Copy Run this Command after setting it to your environment.</p><h3 id="Check-GPU"><a href="#Check-GPU" class="headerlink" title="Check GPU"></a>Check GPU</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">print(torch.cuda.get_device_name(<span class="number">0</span>))</span><br><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure><h3 id="Create-Tensor"><a href="#Create-Tensor" class="headerlink" title="Create Tensor"></a>Create Tensor</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The values that existed in the memory allocated at that time appear as</span></span><br><span class="line"><span class="comment"># initial values.</span></span><br><span class="line">x = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Randomly initialized matrix (0 = x &lt; 1)</span></span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line"><span class="comment"># dtype = long, Matrix filled with zeros</span></span><br><span class="line">x = torch.zeros(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.long) </span><br><span class="line"><span class="comment"># Create tensor with list</span></span><br><span class="line">x = torch.tensor([<span class="number">5.5</span>, <span class="number">3</span>]) </span><br><span class="line"></span><br><span class="line"><span class="comment"># Create new Tensor based on existing Tensor</span></span><br><span class="line">x = x.new_ones(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.double) </span><br><span class="line"><span class="comment"># Create new Tensor based on existing Tensor</span></span><br><span class="line">x = torch.randn_like(x, dtype=torch.<span class="built_in">float</span>) </span><br><span class="line"><span class="comment"># Obtain matrix size, return torch.Size supports tuple types, all tuple operations</span></span><br><span class="line">x.size() </span><br></pre></td></tr></table></figure><h3 id="Tensor-Operation"><a href="#Tensor-Operation" class="headerlink" title="Tensor Operation"></a>Tensor Operation</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Operation 1</span></span><br><span class="line">y = torch.rand(<span class="number">5</span>, <span class="number">3</span>) </span><br><span class="line">print(x + y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Operation 2</span></span><br><span class="line">print(torch.add(x, y)) </span><br><span class="line"></span><br><span class="line">result = torch.empty(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Operation 3</span></span><br><span class="line">torch.add(x, y, out=result) </span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure><h3 id="Change-Tensor-shape-and-convert-to-numpy-array"><a href="#Change-Tensor-shape-and-convert-to-numpy-array" class="headerlink" title="Change Tensor shape and convert to numpy array"></a>Change Tensor shape and convert to numpy array</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># When changing size and shape of sensor, use torch.view</span></span><br><span class="line">x = torch.rand(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">y = x.view(<span class="number">16</span>)</span><br><span class="line">z = x.view(-<span class="number">1</span>, <span class="number">8</span>)</span><br><span class="line">print(x.size(), y.size(), z.size())</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># If only one value exists in the tensor, a numeric value can be obtained</span></span><br><span class="line"><span class="comment"># using .item()</span></span><br><span class="line">print(x.item()) </span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert torch tensor to numpy array</span></span><br><span class="line">a = torch.ones(<span class="number">5</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = a.numpy()</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure><h3 id="CPU-GPU-Tensor-Change"><a href="#CPU-GPU-Tensor-Change" class="headerlink" title="CPU, GPU Tensor Change"></a>CPU, GPU Tensor Change</h3><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run only in CUDA-enabled environments (GPU environments)</span></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available(): </span><br><span class="line">    device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line">    <span class="comment"># Create a direct tensor on a GPU</span></span><br><span class="line">    y = torch.ones_like(x, device=device) </span><br><span class="line">    <span class="comment"># Change CPU Tensor to GPU Tensor</span></span><br><span class="line">    x = x.to(device) </span><br><span class="line">    z = x + y</span><br><span class="line">    print(z)</span><br><span class="line">    print(z.to(<span class="string">&quot;cpu&quot;</span>, torch.double))</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://github.aivillain.com/categories/Pytorch/">Pytorch</category>
-      
-      
-      <category domain="https://github.aivillain.com/tags/Pytorch/">Pytorch</category>
-      
-      <category domain="https://github.aivillain.com/tags/Deep-learning/">Deep learning</category>
-      
-      
-      <comments>https://github.aivillain.com/2021/01/25/en/Pytorch-Tensor/#disqus_thread</comments>
       
     </item>
     
